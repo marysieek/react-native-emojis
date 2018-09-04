@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNReactNativeEmojis : NSObject <RCTBridgeModule>
+@interface ReactNativeEmojis : NSObject <RCTBridgeModule>
 
 @end
   

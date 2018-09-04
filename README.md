@@ -14,8 +14,8 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactNativeEmojisPackage;` to the imports at the top of the file
-  - Add `new RNReactNativeEmojisPackage()` to the list returned by the `getPackages()` method
+  - Add `import com.reactlibrary.ReactNativeEmojisPackage;` to the imports at the top of the file
+  - Add `new ReactNativeEmojisPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-react-native-emojis'

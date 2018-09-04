@@ -14,13 +14,13 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 
-public class RNReactNativeEmojisModule extends ReactContextBaseJavaModule {
+public class ReactNativeEmojisModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
   private static Paint paint = new Paint();
   private static final String MODULE_NAME = "EmojiChecker";
 
-  public RNReactNativeEmojisModule(ReactApplicationContext reactContext) {
+  public ReactNativeEmojisModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
