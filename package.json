@@ -2,16 +2,26 @@
 {
   "name": "react-native-react-native-emojis",
   "version": "1.0.0",
-  "description": "",
+  "description": "Allows to check if given emoji is renderable",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "emojis",
+    "emoji",
+    "emoji-checker"
   ],
-  "author": "",
-  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/marysieek/react-native-emojis.git"
+  },
+  "author": "Maria Korlotian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marysieek/react-native-emojis/issues"
+  },
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
