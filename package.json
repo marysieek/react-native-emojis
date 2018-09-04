@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-react-native-emojis",
+  "name": "react-native-emojis",
   "version": "1.0.0",
   "description": "Allows to check if given emoji is renderable",
   "main": "index.js",
