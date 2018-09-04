@@ -46,10 +46,10 @@ public class RNReactNativeEmojisModule extends ReactContextBaseJavaModule {
    * value is determined from isSupportedEmoji method and is truthy when emoji
    * exists or falsey when it does not.
    *
-   * 
-   * @param readableArray array of emojis that need to be checked in 
+   *
+   * @param readableArray array of emojis that need to be checked in
    *                      [{ char: 'U+1F631' }] format
-   * @param promise       communication with RN happens either by promises or callbacks - 
+   * @param promise       communication with RN happens either by promises or callbacks -
    *                      in this case promises were used
    * @return the modified readableArray with extra field determining the emoji visibility
    */
