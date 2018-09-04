@@ -1,7 +1,7 @@
 
-#import "RNReactNativeEmojis.h"
+#import "ReactNativeEmojis.h"
 
-@implementation RNReactNativeEmojis
+@implementation ReactNativeEmojis
 
 - (dispatch_queue_t)methodQueue
 {
