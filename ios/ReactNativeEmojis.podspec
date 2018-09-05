@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name          = "ReactNativeEmojis"
-  s.version       = "1.0.1"
+  s.version       = "1.0.2"
   s.summary       = "ReactNativeEmojis"
   s.description   = <<-DESC
                      ReactNativeEmojis
