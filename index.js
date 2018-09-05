@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { ReactNativeEmojiChecker } = NativeModules;
+const { EmojiChecker } = NativeModules;
 
-export default ReactNativeEmojiChecker;
+export default EmojiChecker;
