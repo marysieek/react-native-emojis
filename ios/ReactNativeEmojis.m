@@ -1,5 +1,6 @@
 
 #import "ReactNativeEmojis.h"
+#import <CoreText/CoreText.h>
 
 @implementation ReactNativeEmojis
 
@@ -24,11 +25,29 @@ RCT_REMAP_METHOD(canShowEmojis,
 {
     NSMutableArray *emojisMapped = [NSMutableArray array];
     for (NSMutableDictionary *emoji in emojis) {
-        emoji[@"visible"] = @YES;
-        [emojisMapped addObject:  emoji];
+        NSString *code = emoji[@"char"];
+        emoji[@"visible"] = [self canShowEmoji:code] ? @YES : @NO;
+        [emojisMapped addObject:emoji];
     }
 
     return [emojisMapped copy];
+}
+
+- (BOOL) canShowEmoji:(NSString *)emoji
+{
+    NSData *data = [emoji dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
+    UTF32Char emojiValue;
+    [data getBytes:&emojiValue length:sizeof(emojiValue)];
+    
+    UniChar characters[2] = { };
+    CFIndex length = (CFStringGetSurrogatePairForLongCharacter(emojiValue, characters) ? 2 : 1);
+
+    CGGlyph glyphs[2] = { };
+    CTFontRef ctFont = CTFontCreateWithName((CFStringRef)@"AppleColorEmoji", 0.0, NULL);
+
+    BOOL ret = CTFontGetGlyphsForCharacters(ctFont, characters, glyphs, length);
+    CFRelease(ctFont);
+    return ret;
 }
 
 @end
