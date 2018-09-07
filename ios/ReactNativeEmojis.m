@@ -1,6 +1,5 @@
 
 #import "ReactNativeEmojis.h"
-#import <React/RCTLog.h>
 
 @implementation ReactNativeEmojis
 
@@ -12,13 +11,24 @@
 RCT_EXPORT_MODULE(EmojiChecker)
 
 RCT_REMAP_METHOD(canShowEmojis,
-                 resolver:(RCTPromiseResolveBlock)resolve
+                 params:(NSArray *)emojis
+                 canShowEmojisWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-    RCTLogInfo(@"Pretending to show emojis");
     dispatch_async(dispatch_get_main_queue(), ^{
-        resolve(nil);
+        resolve([self canShowEmojis:emojis]);
     });
+}
+
+- (NSArray *) canShowEmojis:(NSArray *)emojis
+{
+    NSMutableArray *emojisMapped = [NSMutableArray array];
+    for (NSMutableDictionary *emoji in emojis) {
+        emoji[@"visible"] = @YES;
+        [emojisMapped addObject:  emoji];
+    }
+
+    return [emojisMapped copy];
 }
 
 @end
