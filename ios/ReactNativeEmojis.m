@@ -38,7 +38,7 @@ RCT_REMAP_METHOD(canShowEmojis,
     NSData *data = [emoji dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
     UTF32Char emojiValue;
     [data getBytes:&emojiValue length:sizeof(emojiValue)];
-    
+
     UniChar characters[2] = { };
     CFIndex length = (CFStringGetSurrogatePairForLongCharacter(emojiValue, characters) ? 2 : 1);
 
