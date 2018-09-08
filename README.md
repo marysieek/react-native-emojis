@@ -37,10 +37,17 @@
 ```javascript
 import EmojiChecker from 'react-native-emojis';
 
+// Both platforms
 const emojisList = [{ char: 'U+1F631' }]
 const result = await EmojiChecker.canShowEmojis(emojisList);
 // result => [{ char: 'U+1F631', visible: true }]
 
+// Android only
+const emoji = 'U+1F631'
+const result = await EmojiChecker.canShowEmoji(emoji);
+// result => true
+const result = await EmojiChecker.convertToSupportedEmoji(emoji);
+// result => 'U+1F632'
 ```
 
 ## License
